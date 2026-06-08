@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOTEL PARK VARAHI | Tirupati Booking</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#home" data-page="home">
+      <span>HPV</span>
+      <strong>HOTEL PARK VARAHI</strong>
+    </a>
+    <nav>
+      <button class="active" data-page="home">Home</button>
+      <button data-page="rooms">Rooms</button>
+      <button data-page="alipiri">Alipiri</button>
+      <button data-page="dashboard">Dashboard</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Tirupati Hotel Booking Platform</p>
+          <h1>HOTEL PARK VARAHI</h1>
+          <p>Stay near Tirumala routes with room booking, guest ratings, secure payment simulation, and Google Maps location support.</p>
+          <div class="hero-actions">
+            <button data-page="rooms">Book Rooms</button>
+            <button class="light" data-page="alipiri">View Alipiri</button>
+          </div>
+          <div class="rating-strip">
+            <span><strong>4.7/5</strong> Guest Rating</span>
+            <span><strong>4</strong> Room Types</span>
+            <span><strong>24x7</strong> Booking Desk</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="info-band">
+        <article>
+          <span>01</span>
+          <h2>Tirupati Location</h2>
+          <p>Designed for pilgrims, families, and visitors travelling toward Tirumala and Alipiri.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <h2>Ratings Included</h2>
+          <p>Every room card shows a rating, price, availability, and customer-friendly description.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <h2>Checkout Flow</h2>
+          <p>Add rooms to cart, apply coupon VARAHI10, and generate a simulated payment receipt.</p>
+        </article>
+      </section>
+    </section>
+
+    <section id="rooms" class="page">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Rooms & Booking</p>
+          <h2>Choose your stay at HOTEL PARK VARAHI</h2>
+        </div>
+        <div class="quick-stats">
+          <span><strong id="cartCount">0</strong> in cart</span>
+          <span><strong id="wishlistCount">0</strong> saved</span>
+        </div>
+      </div>
+
+      <section class="booking-tools">
+        <input id="searchInput" type="search" placeholder="Search deluxe, family, pilgrim, Alipiri">
+        <input id="checkIn" type="date">
+        <input id="checkOut" type="date">
+        <select id="priceFilter">
+          <option value="all">All prices</option>
+          <option value="budget">Below INR 2500</option>
+          <option value="comfort">INR 2500 - 4500</option>
+          <option value="premium">Above INR 4500</option>
+        </select>
+      </section>
+
+      <section id="roomGrid" class="room-grid"></section>
+
+      <section class="booking-layout">
+        <div class="panel">
+          <h3>Cart & Checkout</h3>
+          <div id="cartList" class="stack"></div>
+          <div class="coupon-row">
+            <input id="couponInput" type="text" placeholder="Coupon: VARAHI10">
+            <button id="applyCoupon">Apply</button>
+          </div>
+          <select id="paymentMethod">
+            <option>Razorpay</option>
+            <option>Stripe</option>
+            <option>PayPal</option>
+            <option>Payment Simulation</option>
+          </select>
+          <p class="total">Total <strong id="cartTotal">INR 0</strong></p>
+          <button id="payNow">Pay & Confirm Booking</button>
+        </div>
+
+        <div class="panel">
+          <h3>Booking History</h3>
+          <div id="bookingHistory" class="stack"></div>
+        </div>
+      </section>
+
+      <section class="map-section">
+        <div>
+          <p class="eyebrow">Google Maps</p>
+          <h2>Find HOTEL PARK VARAHI in Tirupati</h2>
+          <p>The map is embedded with a Google Maps search for HOTEL PARK VARAHI Tirupati.</p>
+        </div>
+        <iframe
+          title="HOTEL PARK VARAHI Tirupati Google Map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=HOTEL%20PARK%20VARAHI%20Tirupati&t=&z=14&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </section>
+    </section>
+
+    <section id="alipiri" class="page">
+      <section class="garuda-page">
+        <div>
+          <p class="eyebrow">Next Page</p>
+          <h2>Garuda Statue at Alipiri</h2>
+          <p>Alipiri is a key gateway area for Tirumala visitors. This section gives the booking platform a Tirupati landmark page with the Garuda image requested.</p>
+          <div class="rating-strip dark">
+            <span><strong>4.8/5</strong> Landmark Rating</span>
+            <span><strong>Alipiri</strong> Gateway Area</span>
+          </div>
+        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Garuda_statue_4.jpg" alt="Garuda statue at Alipiri, Tirupati">
+      </section>
+    </section>
+
+    <section id="dashboard" class="page">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Hotel Management</p>
+          <h2>Admin dashboard and booking report</h2>
+        </div>
+      </div>
+      <section class="metrics">
+        <article><span>Hotel</span><strong>HOTEL PARK VARAHI</strong></article>
+        <article><span>Rooms</span><strong id="metricRooms">0</strong></article>
+        <article><span>Bookings</span><strong id="metricBookings">0</strong></article>
+        <article><span>Revenue</span><strong id="metricRevenue">INR 0</strong></article>
+      </section>
+      <section class="booking-layout">
+        <form id="roomForm" class="panel">
+          <h3>Add Room</h3>
+          <input id="roomType" type="text" placeholder="Room type" required>
+          <input id="price" type="number" min="1000" placeholder="Price" required>
+          <select id="availability">
+            <option value="true">Available</option>
+            <option value="false">Unavailable</option>
+          </select>
+          <button type="submit">Save Room</button>
+        </form>
+        <div class="panel">
+          <h3>Booking Report</h3>
+          <div id="bookingReport" class="table"></div>
+          <button id="downloadReport">Download CSV</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    Images: Tirumala Overview by Bryan Allison via Wikimedia Commons. Garuda statue by Iamvrt46 via Wikimedia Commons.
+  </footer>
+
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

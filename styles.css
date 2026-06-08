@@ -1,0 +1,462 @@
+:root {
+  --ink: #18211f;
+  --muted: #66716d;
+  --line: #d7ded9;
+  --paper: #ffffff;
+  --page: #f4f7f2;
+  --green: #116149;
+  --gold: #b7791f;
+  --deep: #101827;
+  --danger: #a11d1d;
+  --tirumala-bg: url("https://commons.wikimedia.org/wiki/Special:FilePath/Tirumala%20Hills%20view.jpg");
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--page);
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 15px;
+  color: #fff;
+  background: var(--green);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+button.light {
+  color: var(--ink);
+  background: #fff;
+}
+
+button.ghost {
+  color: var(--ink);
+  background: #eef2ef;
+}
+
+button.danger {
+  background: var(--danger);
+}
+
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+input, select {
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 14px clamp(16px, 4vw, 48px);
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  color: #fff;
+  background: var(--green);
+  border-radius: 6px;
+  font-weight: 800;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav button {
+  color: var(--ink);
+  background: #eef3ef;
+}
+
+nav button.active {
+  color: #fff;
+  background: var(--deep);
+}
+
+main {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 44px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.hero {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  align-items: end;
+  margin: 0 calc(50% - 50vw);
+  padding: 60px clamp(18px, 6vw, 76px);
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(8, 19, 22, 0.68), rgba(8, 19, 22, 0.24) 58%, rgba(8, 19, 22, 0.06)),
+    var(--tirumala-bg) center top / cover no-repeat;
+}
+
+.hero-copy {
+  width: min(760px, 100%);
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: clamp(42px, 8vw, 82px);
+  line-height: 0.96;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: clamp(26px, 4vw, 42px);
+  line-height: 1.08;
+}
+
+h3 {
+  margin-bottom: 12px;
+  font-size: 20px;
+}
+
+.hero p {
+  max-width: 630px;
+  font-size: 19px;
+  line-height: 1.58;
+}
+
+.hero-actions, .rating-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.rating-strip span {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+}
+
+.rating-strip.dark span {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.info-band, .metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin: 24px 0;
+}
+
+.info-band article, .metrics article, .panel, .map-section {
+  padding: 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.info-band article span {
+  color: var(--gold);
+  font-weight: 800;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 18px;
+  margin: 28px 0 16px;
+}
+
+.quick-stats {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.quick-stats span {
+  padding: 10px 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.booking-tools {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.room-card {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.room-photo {
+  height: 154px;
+  display: flex;
+  align-items: end;
+  padding: 14px;
+  color: #fff;
+  background:
+    linear-gradient(180deg, rgba(16, 24, 39, 0.04), rgba(16, 24, 39, 0.78)),
+    var(--tirumala-bg) center / cover no-repeat;
+}
+
+.room-body {
+  padding: 16px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.rating {
+  color: #8a4f00;
+  font-weight: 800;
+}
+
+.price {
+  color: var(--green);
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 18px 0;
+}
+
+.stack {
+  display: grid;
+  gap: 10px;
+}
+
+.line-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: #f8faf8;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.coupon-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.map-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 16px;
+  align-items: stretch;
+  margin: 18px 0;
+}
+
+.map-section iframe {
+  width: 100%;
+  min-height: 310px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.garuda-page {
+  min-height: calc(100vh - 120px);
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 28px;
+  align-items: center;
+  margin-top: 24px;
+  padding: clamp(18px, 4vw, 42px);
+  color: #fff;
+  background: var(--deep);
+  border-radius: 8px;
+}
+
+.garuda-page p {
+  color: #d8e0e7;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.garuda-page img {
+  width: 100%;
+  max-height: 650px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+}
+
+.metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metrics span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+}
+
+.metrics strong {
+  font-size: 24px;
+}
+
+#roomForm {
+  display: grid;
+  gap: 10px;
+}
+
+.table {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr 1fr;
+  gap: 8px;
+  padding: 10px;
+  border-bottom: 1px solid var(--line);
+}
+
+.table-row.header {
+  font-weight: 800;
+  background: #eef3ef;
+  border-radius: 6px;
+}
+
+.toast {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  max-width: 340px;
+  padding: 12px 14px;
+  color: #fff;
+  background: var(--deep);
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.2s ease;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto 28px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+@media (max-width: 840px) {
+  .topbar, .section-head {
+    display: block;
+  }
+
+  nav {
+    margin-top: 12px;
+  }
+
+  .hero {
+    min-height: 560px;
+  }
+
+  .info-band,
+  .metrics,
+  .booking-tools,
+  .booking-layout,
+  .map-section,
+  .garuda-page {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row {
+    grid-template-columns: 1fr;
+  }
+}
